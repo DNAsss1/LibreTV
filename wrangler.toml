@@ -1,11 +1,10 @@
 name = 'libre-tv'
-compatibility_date = "2024-03-18"
+compatibility_date = "2025-09-14"
 main = "worker.js"
 
 # Workers Sites configuration for static file serving
 [site]
 bucket = "./"
-entry-point = "worker.js"
 include = ["*.html", "js/**/*", "css/**/*", "image/**/*", "*.css", "*.js", "*.json", "*.txt", "*.ico", "robots.txt", "manifest.json", "service-worker.js"]
 exclude = ["node_modules/**/*", ".git/**/*", "server.mjs", "middleware.js", "package*.json", "Dockerfile", "docker-compose.yml", ".env*", "*.md", "*.yml", "*.yaml", "wrangler.toml", "worker.js"]
 
