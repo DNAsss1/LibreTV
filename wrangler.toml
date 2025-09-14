@@ -1,0 +1,31 @@
+name = "libretv-worker"
+compatibility_date = "2024-03-18"
+main = "worker.js"
+
+# Workers Sites configuration for static file serving
+[site]
+bucket = "./"
+entry-point = "worker.js"
+include = ["*.html", "js/**/*", "css/**/*", "image/**/*", "*.css", "*.js", "*.json", "*.txt", "*.ico", "robots.txt", "manifest.json", "service-worker.js"]
+exclude = ["node_modules/**/*", ".git/**/*", "server.mjs", "middleware.js", "package*.json", "Dockerfile", "docker-compose.yml", ".env*", "*.md", "*.yml", "*.yaml", "wrangler.toml", "worker.js"]
+
+# Production environment
+[env.production]
+# Set these variables using: wrangler secret put VARIABLE_NAME
+# PASSWORD = "your_secure_password" # REQUIRED - Set via wrangler secret put PASSWORD
+# DEBUG = "false"
+# CORS_ORIGIN = "*"
+# REQUEST_TIMEOUT = "30000"
+# MAX_RETRIES = "2"
+# USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+# BLOCKED_HOSTS = "localhost,127.0.0.1,0.0.0.0,::1"
+# BLOCKED_IP_PREFIXES = "192.168.,10.,172."
+# FILTERED_HEADERS = "content-security-policy,cookie,set-cookie,x-frame-options,access-control-allow-origin"
+
+# Development environment
+[env.development]
+vars = { DEBUG = "true" }
+
+# Limits and compatibility
+[limits]
+cpu_ms = 30000  # 30 seconds CPU time limit
