@@ -24,7 +24,3 @@ exclude = ["node_modules/**/*", ".git/**/*", "server.mjs", "middleware.js", "pac
 # Development environment
 [env.development]
 vars = { DEBUG = "true" }
-
-# Limits and compatibility
-[limits]
-cpu_ms = 30000  # 30 seconds CPU time limit
